@@ -1,0 +1,25 @@
+@import 'variables.scss';
+
+:host {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: $background;
+}
+
+.logo {
+  width: 40%;
+}
+
+.btn {
+  min-width: 200px;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  background-color: $primary;
+  color: white;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $secondary;
+  }
+}
