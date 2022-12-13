@@ -1,1 +1,105 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import 'variables.scss';
+
+/* ========== GENERICS ========== */
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  background-color: $background;
+}
+
+/* ========== ELEMENTS ========== */
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ========== COMPONENTS ========== */
+
+
+/* ========== UTILITIES ========== */
+
+/* ========== FLEX ============== */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+/* ========== SIZE ============== */
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+/* ========== TEXT ============== */
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text {
+  font-size: $font-step-0;
+}
+.semibold {
+  font-weight: 600;
+}
+.bold {
+  font-weight: 700;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* ========== ANIMATIONS ========== */
+
+/* ========== KEYFRAMES ========== */
+
+
