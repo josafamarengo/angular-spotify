@@ -1,0 +1,10 @@
+@import 'table';
+
+:host {
+  display: flex;
+  flex: 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}

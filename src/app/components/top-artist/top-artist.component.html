@@ -1,0 +1,12 @@
+<div *ngFor="let artist of artists">
+  <div class="container">
+    <span class="text-lg bold">
+      {{artist.name}}
+    </span>
+    <div
+      class="image"
+      [style.background-image]="'url(' + artist.image + ')'"
+    >
+    </div>
+  </div>
+</div>
