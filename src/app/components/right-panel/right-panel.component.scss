@@ -1,0 +1,15 @@
+@import 'variables.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  max-width: 300px;
+  width: 100%;
+  padding: 40px 20px 20px 20px;
+  box-shadow: 1px -1px 7px rgba(0, 0, 0, 0.75);
+  background-color: $background-light;
+}

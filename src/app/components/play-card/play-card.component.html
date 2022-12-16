@@ -1,0 +1,21 @@
+<div class="container">
+  <div
+    [style.background-image]="'url(' + currentTrack.album.image + ')'"
+    class="image mx-auto"
+  ></div>
+  <span
+    class="text-center bold block mt-2"
+    >{{ currentTrack.name }}</span>
+  <span class="text-center text-xs block">{{ currentTrack.album.name }}</span>
+  <div class="controls">
+    <button (click)="back()">
+      <mat-icon class="text-lg">skip_previous</mat-icon>
+    </button>
+    <button>
+      <mat-icon class="text-lg">{{ playing ? 'pause' : 'play_arrow' }}</mat-icon>
+    </button>
+    <button (click)="next()">
+      <mat-icon class="text-lg">skip_next</mat-icon>
+    </button>
+  </div>
+</div>
