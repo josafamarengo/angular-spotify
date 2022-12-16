@@ -1,0 +1,35 @@
+<nav
+  class="w-full"
+>
+  <ul
+    class="main-menu flex-col justify-between items-start"
+  >
+    <li>
+      <app-menu-button [label]="homeLabel" [selected]="selected === 'home'" (click)="onClick('home')">
+        <mat-icon
+          class="menu-icon"
+          aria-hidden="false"
+          aria-label="Home"
+        >home</mat-icon>
+      </app-menu-button>
+    </li>
+    <li>
+      <app-menu-button [label]="searchLabel" [selected]="selected === 'search'" (click)="onClick('search')">
+        <mat-icon
+          class="menu-icon"
+          aria-hidden="false"
+          aria-label="Search"
+        >search</mat-icon>
+      </app-menu-button>
+    </li>
+    <li>
+      <app-menu-button [label]="libraryLabel" [selected]="selected === 'library'" (click)="onClick('library')">
+        <mat-icon
+          class="menu-icon"
+          aria-hidden="false"
+          aria-label="Your Library"
+        >library_music</mat-icon>
+      </app-menu-button>
+    </li>
+  </ul>
+</nav>

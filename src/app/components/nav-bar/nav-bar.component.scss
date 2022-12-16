@@ -1,0 +1,15 @@
+@import 'variables.scss';
+
+.main-menu {
+  min-height: $main-menu-height;
+
+  li {
+    width: 100%;
+    border-radius: $rounded;
+    overflow: hidden;
+  }
+
+  :not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
