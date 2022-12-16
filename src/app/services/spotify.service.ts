@@ -17,6 +17,7 @@ import {ITrack} from "../interfaces/ITrack";
 @Injectable({
   providedIn: 'root'
 })
+
 export class SpotifyService {
 
   spotifyApi: Spotify.SpotifyWebApiJs = null;
@@ -99,7 +100,6 @@ export class SpotifyService {
   async getTracks(offset = 0, limit = 50): Promise<ITrack[]> {
     const tracks = await this.spotifyApi.getMySavedTracks({offset, limit});
     return tracks.items.map(x => SpotifyTrackToTrack(x.track));
-    console.log(tracks[0])
   }
 
   async playTrack(track: ITrack) {

@@ -3,12 +3,12 @@
 >
   <div
     class="image"
-    [style.background-image]="'url(' + bannerImg + ')'">
+    [style.background-image]="'url(' + bannerImg + ')'"
   >
   </div>
   <div>
     <p class="sub">{{subtitle}}</p>
     <h2 class=" text-2xl">{{bannerTitle}}</h2>
-    <p class="details text-sm">49 músicas • 2h 30min</p>
+    <p class="details text-sm">{{ numberOfItems }} {{ numberOfItems > 1 ? "músicas" : "música"}} • {{ totalTime }}</p>
   </div>
 </div>

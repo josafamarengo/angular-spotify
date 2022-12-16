@@ -19,6 +19,7 @@ export function newTrack() {
       newArtist(),
     ],
     duration_ms: "",
+    time: 0,
     explicit: false,
     preview_url: '',
     uri: '',

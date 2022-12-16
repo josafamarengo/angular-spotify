@@ -57,6 +57,7 @@ export function SpotifyTrackToTrack(track: SpotifyApi.TrackObjectFull): ITrack {
     album: SpotifyAlbumToAlbum(track.album),
     artists: track.artists,
     duration_ms: msToMinutesAndSeconds(track.duration_ms),
+    time: track.duration_ms,
     explicit: track.explicit,
     preview_url: track.preview_url,
     uri: track.uri,

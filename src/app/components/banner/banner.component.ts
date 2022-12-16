@@ -12,6 +12,10 @@ export class BannerComponent implements OnInit {
   @Input()
   bannerImg = '';
   subtitle= '';
+  @Input()
+  numberOfItems = 0;
+  @Input()
+  totalTime = '';
 
   constructor() { }
 

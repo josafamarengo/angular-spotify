@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {SpotifyService} from "../../services/spotify.service";
 import {IArtist} from "../../interfaces/IArtist";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-artist',
@@ -12,7 +13,8 @@ export class TopArtistComponent implements OnInit {
   artists: IArtist[] = [];
 
   constructor(
-    private spotifyService: SpotifyService
+    private spotifyService: SpotifyService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -24,6 +26,10 @@ export class TopArtistComponent implements OnInit {
     if(!!artists) {
       this.artists = artists;
     }
+  }
+
+  goToArtist(artistId: string) {
+    this.router.navigateByUrl(`/player/list/artist/${artistId}`);
   }
 
 }

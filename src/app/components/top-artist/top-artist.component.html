@@ -6,6 +6,7 @@
     <div
       class="image"
       [style.background-image]="'url(' + artist.image + ')'"
+      (click)="goToArtist(artist.id)"
     >
     </div>
   </div>
