@@ -4,7 +4,7 @@ export const environment = {
 
 export const SpotifyConfig = {
   clientId: '36af13d996d64f54bb674161f729f4bc',
-  redirectUrl: 'http://localhost:4200/login/',
+  redirectUrl: 'https://radinho.netlify.app/login/',
   authEndPoint: 'https://accounts.spotify.com/authorize',
   scopes: [
     "user-read-currently-playing",
