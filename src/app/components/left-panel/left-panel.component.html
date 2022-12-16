@@ -1,0 +1,38 @@
+<div
+  class="menu flex-col h-full"
+>
+  <div
+    class="container flex center w-full"
+  >
+    <img
+      src="./assets/images/spotify-logo.png"
+      alt="Spotify Logo"
+      width="300"
+      height="auto"
+    >
+  </div>
+
+  <app-nav-bar></app-nav-bar>
+
+  <div class="playlist-container">
+    <h3
+      class="playlist-title"
+    >
+      Playlists
+    </h3>
+
+    <ul
+      class="playlist h-full flex-col"
+    >
+      <li *ngFor="let playlist of playlists">
+        <p [title]="playlist.name" (click)="goToPlaylist(playlist.id)">{{playlist.name}}</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div
+  class="user w-full flex items-center"
+>
+  <app-user-footer></app-user-footer>
+</div>

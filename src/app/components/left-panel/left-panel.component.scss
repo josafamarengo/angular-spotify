@@ -1,0 +1,86 @@
+@import 'variables.scss';
+
+$desconsiders-height: $image-height + $main-menu-height + $footer-height;
+
+$playlist-height: calc(98vh - $desconsiders-height);
+
+:host {
+  display: flex;
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  flex-direction: column;
+  width: min(100vw, $left-panel-width);
+  height: 100vh;
+  overflow: hidden;
+  background-color: $background-light;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.75);
+
+  img {
+    width: 70%;
+  }
+}
+
+.menu {
+  flex: 1;
+  padding: 0 40px;
+}
+
+.container {
+  min-height: $image-height;
+}
+
+.playlist-title {
+  font-size: 1.2rem;
+  margin: 2rem 0 1rem 0;
+}
+
+.playlist-container {
+  height: $playlist-height;
+  padding-bottom: 1rem;
+  overflow-y: hidden;
+}
+
+.playlist {
+  overflow-y: auto;
+
+  /* scrollbar display none */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  li {
+    font-size: 0.8rem;
+    width: 100%;
+    white-space: nowrap;
+    animation: list-item-entry 3s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    p {
+      color: $text-light;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &:hover {
+        color: $text;
+      }
+    }
+  }
+}
+
+.user {
+  height: $footer-height;
+  border-top: 1px solid $background;
+}
+
+@keyframes list-item-entry {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
