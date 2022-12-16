@@ -1,0 +1,50 @@
+@import 'variables';
+
+:host {
+
+}
+
+.banner {
+  display: flex;
+
+  width: 100%;
+  height: 500px;
+
+  padding: 3rem;
+  background: linear-gradient(to top, $background 10%, $primary 90%);
+
+}
+
+.image {
+  min-width: 300px;
+  height: 300px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 5px;
+
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.75);
+
+  @media (min-width: 768px) {
+    margin-right: 3rem;
+  }
+}
+
+.sub {
+  transform: translateY(200%);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -2;
+}
+
+.title {
+  letter-spacing: -2;
+  line-height: 64px;
+}
+
+.details {
+  transform: translateY(-200%);
+}
