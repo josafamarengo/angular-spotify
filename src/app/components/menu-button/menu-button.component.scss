@@ -1,0 +1,13 @@
+@import 'variables.scss';
+
+.button {
+  background-color: $background-light;
+  padding: 0.6rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &.selected {
+    background-color: $primary;
+  }
+}
