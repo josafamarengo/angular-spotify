@@ -1,10 +1,22 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-player',
   templateUrl: './player.component.html',
   styleUrls: ['./player.component.scss']
 })
-export class PlayerComponent {
+export class PlayerComponent implements OnInit {
 
+  screenWidth: number;
+
+  constructor() { }
+
+  ngOnInit() {
+    this.getWindowWidth();
+  }
+
+  getWindowWidth() {
+    const width = window.innerWidth;
+    this.screenWidth = width;
+  }
 }
