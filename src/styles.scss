@@ -1,10 +1,45 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$angular-spotify-primary: mat.define-palette(mat.$indigo-palette);
+$angular-spotify-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$angular-spotify-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$angular-spotify-theme: mat.define-light-theme((
+  color: (
+    primary: $angular-spotify-primary,
+    accent: $angular-spotify-accent,
+    warn: $angular-spotify-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($angular-spotify-theme);
+
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import 'variables.scss';
 
 /* ========== GENERICS ========== */
 
-html {
+html,body {
   margin: 0;
   padding: 0;
 }
@@ -12,25 +47,76 @@ html {
 * {
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
+  color: $text;
+}
+
+body {
   background-color: $background;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+
+  &-track {
+    background: transparent;
+  }
+
+  &-thumb {
+    background: rgba($primary, 0.6);
+    border-radius: 10px;
+  }
+
+  &-thumb:hover {
+    background: #555;
+  }
+
+  &-thumb:active {
+    background: #555;
+  }
+
+  &-thumb:window-inactive {
+    background: #555;
+  }
+}
 /* ========== ELEMENTS ========== */
 
 button {
   border: none;
   outline: none;
   cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 ul, ol {
   list-style: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
 }
 
 /* ========== COMPONENTS ========== */
 
-
+.card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px;
+  margin: 20px 0;
+}
 /* ========== UTILITIES ========== */
+
+.pointer {
+  cursor: pointer;
+}
+
+.text-clip {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
 
 /* ========== FLEX ============== */
 .flex {
@@ -49,6 +135,10 @@ ul, ol {
 
 .items-center {
   align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .justify-center {
@@ -72,6 +162,113 @@ ul, ol {
   height: 100%;
 }
 
+.w {
+  @for $i from 1 through 10 {
+    $width: $i * 5;
+    &-#{$width} {
+      width: #{ $width * 1% };
+    }
+  }
+}
+
+.h {
+  @for $i from 1 through 10 {
+    $height: $i * 5;
+    &-#{$height} {
+      height: #{ $height * 1% };
+    }
+  }
+}
+
+/* ========== Position ============== */
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.inset {
+  inset: 0;
+}
+
+/* ========== MARGIN ============== */
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ml-auto {
+  margin-left: auto;
+}
+
+.m{
+  @for $i from 1 through 10 {
+    &-#{$i} {
+      margin: calc(#{$i} * 0.5rem);
+    }
+  }
+  @for $i from 1 through 10 {
+    &t-#{$i} {
+      margin-top: calc(#{$i} * 0.5rem);
+    }
+  }
+  @for $i from 1 through 10 {
+    &r-#{$i} {
+      margin-right: calc(#{$i} * 0.5rem);
+    }
+  }
+  @for $i from 1 through 10 {
+    &b-#{$i} {
+      margin-bottom: calc(#{$i} * 0.5rem);
+    }
+  }
+  @for $i from 1 through 10 {
+    &l-#{$i} {
+      margin-left: calc(#{$i} * 0.5rem);
+    }
+  }
+  @for $i from 1 through 10 {
+    &x-#{$i} {
+      margin-left: calc(#{$i} * 0.5rem);
+      margin-right: calc(#{$i} * 0.5rem);
+    }
+  }
+  @for $i from 1 through 10 {
+    &y-#{$i} {
+      margin-top: calc(#{$i} * 0.5rem);
+      margin-bottom: calc(#{$i} * 0.5rem);
+    }
+  }
+}
+
 /* ========== TEXT ============== */
 
 .text-center {
@@ -89,6 +286,35 @@ ul, ol {
 .text {
   font-size: $font-step-0;
 }
+
+.text-sm {
+  font-size: $font-step--1;
+}
+
+.text-xs {
+  font-size: $font-step--2;
+}
+
+.text-lg {
+  font-size: $font-step-1;
+}
+
+.text-xl {
+  font-size: $font-step-2;
+}
+
+.text-2xl {
+  font-size: $font-step-3;
+}
+
+.text-3xl {
+  font-size: $font-step-4;
+}
+
+.text-4xl {
+  font-size: $font-step-5;
+}
+
 .semibold {
   font-weight: 600;
 }
@@ -96,10 +322,106 @@ ul, ol {
   font-weight: 700;
 }
 
-/* ========== MEDIA QUERIES ========== */
+.lighter {
+  font-weight: 300;
+}
 
-/* ========== ANIMATIONS ========== */
+text-black {
+  color: #000000;
+}
 
-/* ========== KEYFRAMES ========== */
+/* ========== COLORS ============== */
 
+.bg-black {
+  background-color: #000000;
+}
 
+.bg-white {
+  background-color: #ffffff;
+}
+
+.bg-background {
+  background-color: $background;
+}
+
+.bg-primary {
+  background-color: $primary;
+}
+
+.bg-background-light {
+  background-color: $background-light;
+}
+
+.text-black {
+  color: #000000;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-light {
+  color: $text-light;
+}
+
+.text-background {
+  color: $background;
+}
+
+.text-primary {
+  color: $primary;
+}
+
+.text-background-light {
+  color: $background-light;
+}
+
+/* ========== DISPLAY ============== */
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ========== Z-INDEX ============== */
+
+.z-0 {
+  z-index: 0;
+}
+
+.z-1 {
+  z-index: 1;
+}
+
+.z-2 {
+  z-index: 2;
+}
+
+.z-3 {
+  z-index: 3;
+}
+
+.z-4 {
+  z-index: 4;
+}
+
+.z-5 {
+  z-index: 5;
+}
+
+/* ========== OPACITY ============== */
+
+.opacity {
+  @for $i from 1 through 10 {
+    &-#{$i * 10} {
+      opacity: #{ $i * 0.1 };
+    }
+  }
+}

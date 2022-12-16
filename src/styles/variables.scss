@@ -1,13 +1,22 @@
 /* ======== Colors ============ */
-$background: #151515;
-$backgroud-light: #1f1f1f;
+$background: #252525;
+$background-light: #303030;
 $primary: #37ab00;
 $secondary: #e91e63;
 $tertiary: #9c27b0;
+$text: #fff;
+$text-light: #b3b3b3;
 
 /* ======== Fonts ============ */
 
+$font-step--2: clamp(0.78rem, calc(0.73rem + 0.13vw), 0.84rem);
+$font-step--1: clamp(0.94rem, calc(0.79rem + 0.38vw), 1.13rem);
 $font-step-0: clamp(1.13rem, calc(0.83rem + 0.75vw), 1.5rem);
+$font-step-1: clamp(1.35rem, calc(0.83rem + 1.3vw), 2rem);
+$font-step-2: clamp(1.62rem, calc(0.78rem + 2.09vw), 2.67rem);
+$font-step-3: clamp(1.94rem, calc(0.66rem + 3.22vw), 3.55rem);
+$font-step-4: clamp(2.33rem, calc(0.41rem + 4.81vw), 4.74rem);
+$font-step-5: clamp(2.8rem, calc(-0.01rem + 7.03vw), 6.31rem);
 
 /* ======== Breakpoints ============ */
 
@@ -15,11 +24,22 @@ $font-step-0: clamp(1.13rem, calc(0.83rem + 0.75vw), 1.5rem);
 
 /* ======== Shadows ============ */
 
+$shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.5);
 /* ======== Borders ============ */
+
+$rounded: 0.5rem;
 
 /* ======== Transitions ============ */
 
 /* ======== Z-Index ============ */
 
 /* ======== Opacity ============ */
+
+/* ======== Other ============ */
+
+$left-panel-width: 350px;
+
+$image-height: 120px;
+$main-menu-height: 150px;
+$footer-height: 70px;
 

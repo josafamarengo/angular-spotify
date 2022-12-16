@@ -1,0 +1,72 @@
+@import 'variables';
+
+.table {
+  width: 100%;
+  text-align: left;
+  table-layout: fixed;
+  border-collapse: collapse;
+
+  .active {
+    background-color: $background-light;
+    padding: 10px;
+
+    img {
+      border-radius: 9999px;
+      animation: disco 5s linear infinite;
+    }
+  }
+
+  thead {
+    border-bottom: rgba($text-light, 0.2) 1px solid;
+  }
+
+  thead th{
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: $text-light;
+  }
+
+  th, td {
+    padding-right: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:nth-child(1){
+      padding-left: 10px;
+    }
+  }
+
+  tr:not(.active) {
+    &:hover {
+      cursor: pointer;
+
+      td {
+        background-color: $background-light;
+        color: $text;
+      }
+    }
+
+    td {
+      padding: 10px 20px 10px 0px;
+      font-weight: 500;
+      font-size: .85rem;
+      color: $text-light;
+
+      &:nth-child(1){
+        padding-left: 10px;
+      }
+    }
+  }
+}
+
+@keyframes disco {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
