@@ -1,0 +1,38 @@
+<div
+  class="flex items-center pointer"
+  [matMenuTriggerFor]="menu"
+  aria-label="Informações do usuário"
+>
+  <img
+    [src]="user.img"
+    [alt]="user.name"
+    width="40"
+    height="40"
+    class="photo mr-2"
+  >
+  <span>{{user.name}}</span>
+</div>
+
+<mat-icon
+  class="logout"
+  title="Sair"
+  (click)="logout()"
+>logout</mat-icon>
+
+<mat-menu
+  #menu="matMenu"
+  yPosition="above"
+>
+  <button mat-menu-item>
+    <mat-icon>dialpad</mat-icon>
+    <span>Redial</span>
+  </button>
+  <button mat-menu-item disabled>
+    <mat-icon>voicemail</mat-icon>
+    <span>Check voice mail</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>notifications_off</mat-icon>
+    <span>Disable alerts</span>
+  </button>
+</mat-menu>

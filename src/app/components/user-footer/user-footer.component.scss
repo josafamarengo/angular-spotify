@@ -1,0 +1,26 @@
+@import 'variables';
+
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: min(100vw, 400px);
+  padding: 1rem;
+}
+
+mat-menu {
+  background-color: #000;
+}
+
+.photo {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logout {
+  cursor: pointer;
+
+  &:hover {
+    color: $primary;
+  }
+}
