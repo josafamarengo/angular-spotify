@@ -85,7 +85,7 @@ git clone https://github.com/josafamarengo/angular-spotify.git
 
 ```bash
 
-cd skill-assessments
+cd angular-spotify
 
 ```
 
